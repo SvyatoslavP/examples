@@ -1,0 +1,22 @@
+spring:
+  application:
+  name: 'Examples'
+
+server:
+  port: 8085
+
+db:
+  lvl-project:
+    postgresql:
+      url: jdbc:postgresql://localhost:5433/postgres
+      username: postgres
+      password: pass
+
+jpa:
+  lvl-project:
+    hibernate:
+      ddlAuto: validate
+      showSql: true
+      formatSql: true
+      lockTimeOut: 10000
+
