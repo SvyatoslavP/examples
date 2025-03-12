@@ -1,22 +1,32 @@
 spring:
   application:
-  name: 'Examples'
+   name: 'Examples'
+  jpa:
+    open-in-view: false
 
 server:
   port: 8085
 
 db:
-  lvl-project:
+  examples:
     postgresql:
       url: jdbc:postgresql://localhost:5433/postgres
+      schema: public
       username: postgres
       password: pass
+      driver: 'org.postgresql.Driver'
+      pool:
+        minimum-idle: 1
+        maximum-size: 5
+        connection-timeout: 30000
+        idle-timeout: 60000
+        leak-detection-threshold: 20000
 
 jpa:
-  lvl-project:
+  examples:
     hibernate:
-      ddlAuto: validate
-      showSql: true
-      formatSql: true
-      lockTimeOut: 10000
+      ddl-auto: validate
+      show-sql: true
+      format-sql: true
+      lock-timeout: 10000
 
